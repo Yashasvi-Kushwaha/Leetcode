@@ -3,23 +3,26 @@ public:
     bool isHappy(int n) {
         int new_n=0;
         int count=0;
-        // if(n==1){
-        //     return true;
-        // }
+       
+        unordered_set<int> s;
         
         while(n>0){
             new_n=0;
+            if(s.find(n)==s.end()){
+                s.insert(n);
+                
+            }
+            else{
+                return false;
+            }
             while(n>0){
                
                 new_n+=(n%10)*(n%10);
                 n=n/10;
             
             }
-            count++;
             n=new_n;
-            if(count>10){
-                return false;
-            }
+            
             if(n==1){
                 return true;
             }
