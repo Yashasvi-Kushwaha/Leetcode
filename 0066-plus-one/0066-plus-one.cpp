@@ -2,9 +2,9 @@ class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
         vector<int> v;
-        int carry=0;
+        int carry=1;
         int n=digits.size()-1;
-        digits[n]++;
+        
         
         
         for(int i=n;i>=0;i--){
