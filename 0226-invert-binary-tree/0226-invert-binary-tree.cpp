@@ -14,9 +14,10 @@ public:
     TreeNode* invertTree(TreeNode* root) {
         if(root==NULL) return nullptr;
         
-        TreeNode* temp=root->left;
-        root->left=root->right;
-        root->right=temp;
+        // TreeNode* temp=root->left;
+        // root->left=root->right;
+        // root->right=temp;
+        swap(root->left,root->right);
         TreeNode* lft=invertTree(root->left);
         TreeNode* rgt=invertTree(root->right);
         
